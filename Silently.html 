@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>SILENTLY</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      direction: rtl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    .zekr {
+      font-size: 52px;
+      color: #ffffff;
+      margin-bottom: 40px;
+    }
+
+    button {
+      padding: 16px 32px;
+      font-size: 24px;
+      border: none;
+      border-radius: 10px;
+      background-color: #27ae60;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1e8449;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="zekr" id="zekrDisplay">بِسْمِ ٱللَّٰهِ</div>
+    <button onclick="nextZekr()"> دواتر </button>
+  </div>
+
+  <script>
+    const azkar = [
+      "بِسْمِ ٱللَّٰهِ",
+      "ٱلْـحَـمْـدُ للهِ",
+      "ٱللَّهُ أَكْبَرُ",
+      "سُبْحَانَ ٱللَّهِ",
+      "لَا إِلَٰهَ إِلَّا ٱللَّٰهُ",
+      "أَسْتَغْفِرُ ٱللَّٰهَ",
+      "سُبْحَانَ ٱللَّهِ وَبِحَمْدِهِ",
+      "سُبْحَانَ ٱللَّهِ الْعَظِيمِ",
+      "اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ",
+      "لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّهِ",
+      "حَسْبُنَا ٱللَّهُ وَنِعْمَ ٱلْوَكِيلُ",
+      "اللَّهُمَّ اغْفِرْ لِي",
+      "رَبِّ ٱغْفِرْ لِي وَتُبْ عَلَيَّ",
+      "اللَّهُمَّ إِنِّي أَسْأَلُكَ ٱلْجَنَّةَ",
+      "اللَّهُمَّ أَجِرْنِي مِنَ ٱلنَّارِ"
+    ];
+
+    let current = 0;
+
+    function nextZekr() {
+      current = (current + 1) % azkar.length;
+      document.getElementById("zekrDisplay").textContent = azkar[current];
+    }
+  </script>
+
+</body>
+</html>
